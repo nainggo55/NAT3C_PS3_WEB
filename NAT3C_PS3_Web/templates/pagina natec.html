@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAT3C PS3 | Servicios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <nav class="nav">
+            <div class="brand">NAT3C <span>PS3</span></div>
+            <div class="links">
+                <a href="#servicios">Servicios</a>
+                <a href="#precios">Precios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div>
+                <p class="tag">SERVICIO PS3</p>
+                <h1>CHIPEO<br><span>PLAY 3</span></h1>
+                <p class="lead">HEN, tiendas y configuración para dejar tu PS3 lista para disfrutar.</p>
+                <a class="btn" href="#precios">VER PRECIOS</a>
+            </div>
+            <img src="{{ url_for('static', filename='img/portada.jpeg') }}" alt="NAT3C PS3" class="hero-img">
+        </div>
+    </header>
+
+    <main>
+        <section id="servicios" class="section">
+            <p class="eyebrow">NAT3C PS3</p>
+            <h2>¿QUÉ OFRECEMOS?</h2>
+            <div class="cards">
+                <article class="card">
+                    <div class="icon">✓</div>
+                    <h3>HEN</h3>
+                    <p>Instalación, reinstalación y revisión del entorno HEN.</p>
+                </article>
+                <article class="card">
+                    <div class="icon">◈</div>
+                    <h3>TIENDAS</h3>
+                    <p>Configuración de las tiendas incluidas en nuestros packs.</p>
+                </article>
+                <article class="card">
+                    <div class="icon">🎮</div>
+                    <h3>JUEGOS</h3>
+                    <p>Instalación de juegos proporcionados o autorizados por el cliente.</p>
+                </article>
+                <article class="card">
+                    <div class="icon">↓</div>
+                    <h3>TODO LISTO</h3>
+                    <p>Servicio pensado para que tu PS3 quede configurada y lista para usar.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="precios" class="section dark-section">
+            <p class="eyebrow">LISTA DE PRECIOS — PS3</p>
+            <h2>PRECIOS</h2>
+
+            <div class="price-grid">
+                {% for nombre, precio, descripcion in servicios %}
+                <article class="price-card">
+                    <div>
+                        <h3>{{ nombre }}</h3>
+                        <p>{{ descripcion }}</p>
+                    </div>
+                    <strong>{{ precio }}</strong>
+                </article>
+                {% endfor %}
+            </div>
+
+            <img src="{{ url_for('static', filename='img/precios.jpeg') }}" alt="Lista de precios NAT3C" class="prices-img">
+        </section>
+
+        <section id="contacto" class="contact section">
+            <p class="eyebrow">CONTACTO</p>
+            <h2>¿QUERÉS CONSULTAR?</h2>
+            <p>Escribinos para consultar disponibilidad, compatibilidad de tu PS3 y turnos.</p>
+            <a class="btn" href="https://wa.me/" target="_blank" rel="noopener">WHATSAPP</a>
+            <p class="small">Reemplazá el enlace de WhatsApp en <code>templates/index.html</code> por tu número.</p>
+        </section>
+    </main>
+
+    <footer>
+        <strong>NAT3C PS3</strong>
+        <span>Más juegos, más diversión — sin límites.</span>
+    </footer>
+</body>
+</html>
